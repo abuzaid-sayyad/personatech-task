@@ -451,6 +451,7 @@ header {
                 display: flex;
                 align-items: center;
                 gap: 4px;
+                cursor: pointer;
 
                 .btn-icon{
                     background-image: url(../assets/icons/grid.png);
@@ -772,6 +773,7 @@ header {
                 outline: none;
                 border: none;
                 background-color: transparent;
+                cursor: pointer;
             }
         }
 
