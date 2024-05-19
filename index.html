@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My HTML Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="dist/style.css">
+</head>
+<body>
+    <header class="flex">
+        <div class="left-widgets flex">
+            <a href="#">
+                <img src="assets/logo/bett_logo.webp" width="62" height="17" alt="logo">
+            </a>
+            <p>My Experience</p>
+        </div>
+        <div class="right-widgets">
+            <nav>
+                <ul class="flex">
+                    <li>
+                        <a href="#">
+                            <span class="icons action"></span>
+                            <span>My Actions(6)</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icons faq"></span>
+                            <span>FAQs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icons logout"></span>
+                            <span>Logout</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content flex">
+        <aside class="profile-section">
+            <div class="bg-gray-50">
+                <div class="profile-pic flex relative">
+                    <div class="rounded">
+                        <span class="picture"></span>
+                    </div>
+                    <button class="image-update">
+                        <span class="camera-icon"></span>
+                    </button>
+                </div>
+                <h3>Adaline Howell</h3>
+                <p>adaline.howell@gmail.com</p>
+            </div>
+            <nav class="menus">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icons my-info"></span>
+                            My Info
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icons resend"></span>
+                            Resend Ticket
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icons transfer"></span>
+                            Trasfer Ticket
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icons admins"></span>
+                            Organizations Admins
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icons history"></span>
+                            View Purchase History
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icons policy"></span>
+                            Privacy Policy
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icons terms"></span>
+                            Terms of Participation
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icons social"></span>
+                            Post on Social
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="timeline-section">
+            <div class="timeline-header">
+                <div class="flex">
+                    <h3>Bett UAE 2023 AT</h3>
+                    <div class="mx-4">
+                        <span class="icon calendar"></span>
+                        <span class="info-item">Mar 29 - 31, 2023</span>
+                    </div>
+                    <div>
+                        <span class="icon location"></span>
+                        <span class="info-item">Excel London</span>
+                    </div>
+                </div>
+                <button>
+                    <span class="btn-icon"></span>
+                    <span>Agenda</span>
+                </button>
+            </div>
+            <div class="event-cards">
+                <div>
+                    <div class="card border-violet">
+                        <div class="relative">
+                            <img src="assets/images/meetup.png" alt="Meetup">
+                            <span class="tool-tips">
+                                37 Meetings Purchased
+                            </span>
+                        </div>
+                        <div class="card-content">
+                            <div class="meetup-talks-amplify flex bg-light-blue">
+                                <span class="icon-box bg-violet flex">
+                                    <span class="meetup icon"></span>
+                                </span>
+                                <div class="meetup-info">
+                                    <h3 class="text-violet">Meetup</h3>
+                                    <div>
+                                        <span class="icon calendar"></span>
+                                        <span class="info-item">Mar 29 - 31, 2023</span>
+                                    </div>
+                                    <div>
+                                        <span class="icon location"></span>
+                                        <span class="info-item">Excel London</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="grid-cols-2 border-b-violet">
+                                <li><a href="#"><span class="icons user"></span> View My Profile</a></li>
+                                <li><a href="#"><span class="icons timeline"></span> View Timeline</a></li>
+                                <li><a href="#"><span class="icons buy"></span> Buy Meetings</a></li>
+                                <li><a href="#"><span class="icons user-m"></span> Manage Participant</a></li>
+                                <li><a href="#"><span class="icons calendar"></span>My Schedule</a></li>
+                            </ul>
+                            <div class="status-timeline">
+                                <span class="icon completed"></span>
+                                <span class="border-dashed"></span>
+                                <div class="content-info">
+                                    <h3>Complete Profile (for your Organization's Participants)</h3>
+                                    <i>Ended on Wed, Feb 12 | 11:30 AM  BT</i>
+                                    <p><strong class="complete">Completed</strong></p>
+                                </div>
+                            </div>
+                            <div class="status-timeline">
+                                <span class="icon action-required"></span>
+                                <span class="border-dashed"></span>
+                                <div class="content-info">
+                                    <h3>Select Participants for Meeting Requests</h3>
+                                    <i>Ended on Wed, Feb 12 | 11:30 AM  BT</i>
+                                    <p><strong class="action">Action Required</strong> for 10 Participants(s) <span>&#9679;</span> <a href="#">Go</a></p>
+                                </div>
+                            </div>
+                            <div class="status-timeline">
+                                <span class="icon ongoing-icon"></span>
+                                <span class="border-dashed"></span>
+                                <div class="content-info">
+                                    <h3>Opt In to Hosted Meeting Requests</h3>
+                                    <i>Ended on Wed, Feb 12 | 11:30 AM  BT</i>
+                                    <p><strong class="ongoing">Ongoing</strong> <span>&#9679;</span> <a href="#">Update</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card border-green">
+                        <div class="relative">
+                            <img src="assets/images/talkable.png" alt="Meetup">
+                        </div>
+                        <div class="card-content">
+                            <div class="meetup-talks-amplify flex bg-light-green">
+                                <span class="icon-box bg-green flex">
+                                    <span class="tabletalks icon"></span>
+                                </span>
+                                <div class="meetup-info">
+                                    <h3 class="text-green">Tabletalks</h3>
+                                    <div>
+                                        <span class="icon calendar"></span>
+                                        <span class="info-item">Mar 29 - 31, 2023</span>
+                                    </div>
+                                    <div>
+                                        <span class="icon location"></span>
+                                        <span class="info-item">Excel London</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="grid-cols-2 border-b-green">
+                                <li><a href="#"><span class="icons timeline"></span> View Timeline</a></li>
+                                <li><a href="#"><span class="icons calendar"></span>My Schedule</a></li>
+                            </ul>
+                            <div class="status-timeline">
+                                <span class="icon completed"></span>
+                                <span class="border-dashed"></span>
+                                <div class="content-info">
+                                    <h3>Accept Meetings</h3>
+                                    <i>By Wed, Mar 8, 8:30 PM  AT</i>
+                                    <p><strong class="complete">Completed</strong></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="card border-pink">
+                        <div class="relative">
+                            <img src="assets/images/amplify.png" alt="Meetup">
+                        </div>
+                        <div class="card-content">
+                            <div class="meetup-talks-amplify flex bg-light-teal">
+                                <span class="icon-box bg-cyan flex">
+                                    <span class="amplify icon"></span>
+                                </span>
+                                <div class="meetup-info">
+                                    <h3 class="text-teal">Amplify (Associated)</h3>
+                                    <div>
+                                        <span class="icon calendar"></span>
+                                        <span class="info-item">Mar 29 - 31, 2023</span>
+                                    </div>
+                                    <div>
+                                        <span class="icon location"></span>
+                                        <span class="info-item">Excel London</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="grid-cols-2 border-b-pink">
+                                <li><a href="#"><span class="icons user"></span> View My Profile</a></li>
+                                <li><a href="#"><span class="icons timeline"></span> View Timeline</a></li>
+                                <li><a href="#"><span class="icons user-m"></span> Manage Participant</a></li>
+                            </ul>
+                            <div class="status-timeline">
+                                <span class="icon completed"></span>
+                                <span class="border-dashed"></span>
+                                <div class="content-info">
+                                    <h3>Complete Profile (for your Activities)</h3>
+                                    <i>Ended on Wed, Feb 12 | 11:30 AM  BT</i>
+                                    <p><strong class="complete">Completed</strong></p>
+                                </div>
+                            </div>
+                            <div class="status-timeline">
+                                <span class="icon action-required"></span>
+                                <span class="border-dashed"></span>
+                                <div class="content-info">
+                                    <h3>Enrol in Activity</h3>
+                                    <i>Ended on Wed, Feb 12 | 11:30 AM  BT</i>
+                                    <p><strong class="action">Action Required</strong> for 10 Participants(s) <span>&#9679;</span> <a href="#">Go</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <aside>
+            <div class="sponsors">
+                <div class="sponsor-head flex">
+                    <h2>Sponsors</h2>
+                    <button>✕</button>
+                </div>
+                <div class="sponsor border-b">
+                    <img class="citi-logo" src="assets/logo/citi-logo.png" alt="Citi">
+                    <p>Partnering for Innovation and Growth. Together. Today. Tomorrow</p>
+                    <a href="https://citi.com">https://citi.com</a>
+                </div>
+                <div class="sponsor">
+                    <img class="pt-logo" src="assets/logo/peronatech.jpeg" alt="PT">
+                    <p>Partnering for Innovation and Growth. Together. Today. Tomorrow</p>
+                    <a href="https://personatech.com">https://personatech.com</a>
+                </div>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>

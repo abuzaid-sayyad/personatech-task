@@ -1,0 +1,680 @@
+// Variables for colors
+$white: #ffffff;
+$dark-gray: #404257;
+$snow-drift : #FAFAFA;
+$vista-white: #F8F8F8;
+$aqua-haze: #ECF2FF;
+$geyser: #DFDFDF;
+$jet-grey: #6C6B79;
+$raspberry : #D61355;
+$yale-blue: #153E90;
+$mint-cream: #FCFBFF;
+$light-violet: #C6C2FF;
+$water-leaf: #B1EACA;
+$pink-rose: #F89DBC;
+$light-blue: #F2F1FF;
+$light-green: #DFFAEB;
+$light-teal: #EBFAF7;
+$violet: #C7C3FE;
+$cyan: #80F6EA;
+$green: #9EF8C5;
+$yellow: #F8B656;
+$storm-grey: #747682;
+$hit-grey: #A8A8B2;
+$pink: #D61254;
+$gray-100: #F3F3F3;
+
+// Variables for fonts
+$font-main: 'Roboto', sans-serif;
+
+// Font size
+$text-xxs: 10px;
+$text-xs: 12px;
+$text-sm: 14px;
+
+// Border radius 
+$rounded: 4px;
+$rounded-md: 8px;
+$rounded-xl: 14px;
+$rounded-full : 9999px;;
+
+// Mixins
+@mixin background-props {
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@mixin text-styles($font-size, $font-weight, $color: "transparent") {
+    font-size: $font-size;
+    font-weight: $font-weight;
+    color: $color;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $snow-drift;
+    font-family: $font-main;
+}
+
+// common css 
+.flex {
+    display: flex;
+}
+
+.mx-4 {
+    margin: 0 16px;
+}
+
+.mb-1 {
+    margin-bottom: 2px;
+}
+
+.relative {
+    position: relative;
+}
+
+header {
+    background-color: $white;
+    height: 58px;
+    box-shadow: 0 0px 10px rgba(3, 3, 3, 0.04);
+    justify-content: space-between;
+
+    .left-widgets {
+        align-items: center;
+
+        a {
+            height: 100%;
+            background-color: $yale-blue;
+            width: 236px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        p {
+            @include text-styles($text-sm, 500, $dark-gray);
+            padding: 0 28px;
+        }
+    }
+
+    .right-widgets {
+        nav{
+            height: 100%;
+            ul{
+                align-items: center;
+                list-style: none;
+                height: 100%;
+
+                li{
+                    a {
+                        display: inline-block;
+                        padding: 0 14px;
+                        text-decoration: none;
+                        @include text-styles($text-xs, 500, $dark-gray);
+            
+                        .icons {
+                            @include background-props();
+                            width: 14px;
+                            height: 14px;
+                            display: inline-block;
+                            margin-right: 6px;
+                            vertical-align: middle;
+                        }
+            
+                        .action {
+                            background-image: url(../assets/icons/target.png);
+                        }
+            
+                        .faq {
+                            background-image: url(../assets/icons/help.png);
+                        }
+            
+                        .logout {
+                            background-image: url(../assets/icons/logout.png);
+                        }
+                    }
+                    &:first-of-type a {
+                        color: $raspberry;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+.content {
+    padding: 20px 25px;
+    gap: 26px;
+
+    .profile-section {
+        background-color: $white;
+        width: 210px;
+        box-shadow: 0 0px 10px rgba(3, 3, 3, 0.06);
+        border-radius: $rounded-xl;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        .bg-gray-50 {
+            background-color: $snow-drift;
+            padding: 18px 16px 12px;
+            text-align: center;
+
+            .profile-pic {
+                justify-content: center;
+                margin-bottom: 12px;
+
+                .rounded {
+                    border-radius: $rounded-full;
+                    width: 80px;
+                    height: 80px;
+                    border: 2px solid $white;
+                    box-shadow: 0 0 10px rgba(3, 3, 3, 0.06);
+                    overflow: hidden;
+
+                    .picture {
+                        background-image: url(../assets/images/profile-pic.webp);
+                        @include background-props();
+                        width: 100%;
+                        height: 100%;
+                        display: inline-block;
+                    }
+                }
+
+                .image-update {
+                    background-color: $white;
+                    border-radius: $rounded-full;
+                    width: 24px;
+                    height: 24px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 48px;
+                    box-shadow: 0 0 10px rgba(3, 3, 3, 0.06);
+                    outline: none;
+                    border: none;
+                    cursor: pointer;
+                    display: flex;
+
+                    .camera-icon {
+                        background-image: url(../assets/icons/camera.png);
+                        @include background-props();
+                        width: 14px;
+                        height: 14px;
+                        display: inline-block;
+                        margin: auto;
+                    }
+                }
+            }
+
+            
+            
+            h3 {
+                @include text-styles($text-sm, 500, $dark-gray);
+                margin-bottom: 6px;
+            }
+
+            p {
+                @include text-styles($text-xs, 500, $jet-grey);
+            }
+        }
+
+        .menus ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+
+            li a {
+                @include text-styles($text-xs, 500, $dark-gray);
+                padding: 12px;
+                display: block;
+                text-decoration: none;
+                border-bottom: 1px solid $vista-white;
+                transition: background-color 0.3s;
+                
+                &:hover {
+                    background-color: $aqua-haze;
+                    color: $yale-blue;
+
+                    .icons {
+                        filter: invert(22%) sepia(76%) saturate(2667%) hue-rotate(248deg) brightness(50%) contrast(94%)
+                    }
+                }
+
+                .icons {
+                    @include background-props();
+                    width: 20px;
+                    height: 20px;
+                    display: inline-block;
+                    margin-right: 10px;
+                    vertical-align: middle;
+
+                }
+
+                .my-info {
+                    background-image: url(../assets/icons/user2.png);
+                }
+
+                .resend {
+                    background-image: url(../assets/icons/reload.png);
+                }
+
+                .transfer {
+                    background-image: url(../assets/icons/data-transfer.png);
+                }
+
+                .admins {
+                    background-image: url(../assets/icons/users.png);
+                }
+
+                .history {
+                    background-image: url(../assets/icons/payment.png);
+                }
+
+                .policy {
+                    background-image: url(../assets/icons/insurance.png);
+                }
+
+                .terms {
+                    background-image: url(../assets/icons/planning.png);
+                }
+
+                .social {
+                    background-image: url(../assets/icons/share.png);
+                }
+            }
+        }
+    }
+
+    .timeline-section {
+        background-color: $white;
+        width: 100%;
+        box-shadow: 0 0px 10px rgba(3, 3, 3, 0.06);
+        border-radius: $rounded-xl;
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 24px;
+            border-bottom: 1px solid $geyser;
+
+            h3 {
+                @include text-styles($text-sm, 500, $dark-gray);
+            }
+
+            .icon {
+                @include background-props();
+                width: 12px;
+                height: 12px;
+                vertical-align: middle;
+                display: inline-block;
+                margin-bottom: 2px;
+            }
+
+            .calendar {
+                background-image: url(../assets/icons/calendar-2.png);
+            }
+
+            .location {
+                background-image: url(../assets/icons/location.png);
+            }
+
+            .info-item {
+                @include text-styles($text-xs, 500, $jet-grey);
+            }
+
+            button{
+                @include text-styles($text-xs, 400, $dark-gray);
+                outline: none;
+                border: 1px solid $geyser;
+                padding: 8px 18px;
+                border-radius: $rounded;
+                background-color: transparent;
+                display: flex;
+                align-items: center;
+                gap: 4px;
+
+                .btn-icon{
+                    background-image: url(../assets/icons/grid.png);
+                    @include background-props();
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+
+        .event-cards {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+
+            .card {
+                background-color: $mint-cream;
+                border-radius: $rounded-md;
+                width: 100%;
+                overflow: hidden;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+                &.border-violet{
+                    border: 1px solid $light-violet;
+                }
+
+                &.border-green{
+                    border: 1px solid $water-leaf;
+                }
+
+                &.border-pink{
+                    border: 1px solid $pink-rose;
+                }
+
+                .tool-tips{
+                    position: absolute;
+                    bottom: 6px;
+                    right: 10px;
+                    background-color: $white;
+                    @include text-styles($text-xxs, 500, $dark-gray);
+                    padding: 4px 6px;
+                    border-radius: $rounded-full;
+                }
+
+                img {
+                    width: 100%;
+                    height: auto;
+                    vertical-align: top;
+                }
+
+                .card-content {
+
+                    .meetup-talks-amplify {
+                        padding: 8px 10px;
+                        gap: 8px;
+
+                        &.bg-light-blue{
+                            background-color: $light-blue;
+                        }
+
+                        &.bg-light-green{
+                            background-color: $light-green;
+                        }
+
+                        &.bg-light-teal{
+                            background-color: $light-teal;
+                        }
+
+                        .icon-box {
+                            width: 50px;
+                            height: 50px;
+                            border-radius: $rounded-md;
+                            margin-top: -20px;
+                            z-index: 10;
+
+                            &.bg-violet{
+                                background-color: $violet;
+                            }
+
+                            &.bg-cyan{
+                                background-color: $cyan;
+                            }
+
+                            &.bg-green{
+                                background-color: $green;
+                            }
+
+                            .icon {
+                                @include background-props();
+                                width: 30px;
+                                height: 30px;
+                                display: inline-block;
+                                margin: auto;
+
+                                &.meetup {
+                                    background-image: url(../assets/icons/chat.png);
+                                }
+
+                                &.tabletalks {
+                                    background-image: url(../assets/icons/meeting.png);
+                                }
+
+                                &.amplify {
+                                    background-image: url(../assets/icons/spinner.png);
+                                }
+                            }
+                        }
+
+                        .meetup-info {
+                            h3 {
+                                @include text-styles($text-sm, 600, );
+                                margin-bottom: 2px;
+                                
+                                &.text-violet{
+                                    color: $dark-gray;
+                                }
+
+                                &.text-green{
+                                    color: #21431E;
+                                }
+
+                                &.text-teal{
+                                    color: #016058;
+                                }
+                            }
+
+                            .icon {
+                                @include background-props();
+                                width: 12px;
+                                height: 12px;
+                                vertical-align: middle;
+                                display: inline-block;
+                                margin-bottom: 2px;
+                            }
+
+                            .calendar {
+                                background-image: url(../assets/icons/calendar-2.png);
+                            }
+
+                            .location {
+                                background-image: url(../assets/icons/location.png);
+                            }
+
+                            .info-item {
+                                @include text-styles($text-xs, 500, $jet-grey);
+                            }
+                        }
+                    }
+
+                    ul.grid-cols-2 {
+                        padding: 10px;
+                        display: grid;
+                        grid-template-columns: repeat(2, minmax(0, 1fr));
+                        list-style-type: none;
+                        gap: 10px;
+                        
+                        &.border-b-violet{
+                            border-bottom: 1px solid $light-violet;
+                        }
+
+                        &.border-b-green{
+                            border-bottom: 1px solid $water-leaf;
+                        }
+
+                        &.border-b-pink{
+                            border-bottom: 1px solid $pink-rose;
+                        }
+
+                        li {
+
+                            a {
+                                @include text-styles($text-xs, 500, $dark-gray);
+                                display: flex;
+                                align-items: center;
+                                text-decoration: none;
+                                gap: 6px;
+
+                                .icons {
+                                    @include background-props();
+                                    width: 12px;
+                                    height: 12px;
+                                    display: inline-block;
+                                }
+
+                                .user {
+                                    background-image: url(../assets/icons/user-circle.png);
+                                }
+
+                                .timeline {
+                                    background-image: url(../assets/icons/timeline.png);
+                                }
+
+                                .buy {
+                                    background-image: url(../assets/icons/shopping-cart.png);
+                                }
+
+                                .user-m {
+                                    background-image: url(../assets/icons/setting.png);
+                                }
+
+                                .calendar {
+                                    background-image: url(../assets/icons/calendar.png);
+                                }
+                            }
+                        }
+                    }
+
+                    .status-timeline {
+                        display: flex;
+                        padding: 0 10px;
+
+                        .icon {
+                            @include background-props();
+                            width: 14px;
+                            height: 14px;
+                            flex-shrink: 0;
+                            margin-top: 16px;
+                            margin-right: -8px;
+                            z-index: 10;
+
+                            &.completed {
+                                background-image: url(../assets/icons/correct.png);
+                            }
+
+                            &.action-required {
+                                background-image: url(../assets/icons/help-red.png);
+                            }
+
+                            &.ongoing-icon {
+                                background-image: url(../assets/icons/more.png);
+                            }
+                        }
+
+                        .border-dashed {
+                            border-left: 1px dashed $light-violet;
+                        }
+
+                        .content-info {
+                            padding: 16px 0 10px 14px;
+
+                            h3 {
+                                @include text-styles($text-xs, 500, $dark-gray);
+                            }
+
+                            i {
+                                @include text-styles($text-xxs, 400, $storm-grey);
+                                display: inline-block;
+                                margin-bottom: 6px;
+                            }
+
+                            p{
+                                @include text-styles($text-xxs, 400, $hit-grey);
+
+                                strong {
+                                    font-size: $text-xs;
+
+                                    &.complete {
+                                        color: #21BF72;
+                                    }
+
+                                    &.action {
+                                        color: $pink;
+                                    }
+
+                                    &.ongoing {
+                                        color: $yellow;
+                                    }
+                                }
+
+                                span{
+                                    display: inline-block;
+                                    margin: 0 4px;
+                                }
+
+                                a{
+                                    @include text-styles($text-xs, 500, #007DFE);
+                                    text-decoration: none;
+                                }
+                            }                                
+                        }
+                    }                       
+
+                }
+            }
+        }
+    }
+
+    .sponsors {
+        background-color: $white;
+        width: 160px;
+        border: 1px solid $gray-100;
+        border-radius: $rounded-xl;
+        flex-shrink: 0;
+        overflow: hidden;
+
+        .sponsor-head{
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: $gray-100;
+
+            h2{
+                @include text-styles($text-xs, 500, $dark-gray);
+            }
+            button{
+                outline: none;
+                border: none;
+                background-color: transparent;
+            }
+        }
+
+        .sponsor{
+            padding: 12px;
+            text-align: center;
+
+            &.border-b{
+                border-bottom: 1px solid #F7F7F7;
+            }
+
+            .citi-logo{
+                width: 76px;
+                height: auto;
+            }
+
+            .pt-logo{
+                width: 46px;
+                height: auto;
+            }
+
+            p{
+                @include text-styles($text-xs, 400, #767682);
+                margin: 14px 0;
+            }
+
+            a{
+                @include text-styles($text-xs, 400, #767682);
+                text-decoration: none;
+            }
+        }
+    }
+}
