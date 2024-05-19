@@ -36,7 +36,12 @@ $text-sm: 14px;
 $rounded: 4px;
 $rounded-md: 8px;
 $rounded-xl: 14px;
-$rounded-full : 9999px;;
+$rounded-full : 9999px;
+
+// Breakpoints
+$breakpoint-mobile: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1024px;
 
 // Mixins
 @mixin background-props {
@@ -93,15 +98,28 @@ header {
             display: flex;
             justify-content: center;
             align-items: center;
+
+            @media (max-width: $breakpoint-tablet) {
+                width: 94px;
+            }
         }
 
         p {
             @include text-styles($text-sm, 500, $dark-gray);
             padding: 0 28px;
+
+            @media (max-width: $breakpoint-tablet) {
+                padding: 0 12px;
+            }
         }
     }
 
     .right-widgets {
+
+        @media (max-width: $breakpoint-tablet) {
+            display: none;
+        }
+
         nav{
             height: 100%;
             ul{
@@ -145,11 +163,39 @@ header {
             }
         }
     }
+
+    .hamburger{
+        display: none;
+
+        @media (max-width: $breakpoint-tablet) {
+            display: flex;
+            align-items: center;
+            height: 100%;
+            padding: 0 14px;
+            
+            button{
+                outline: none;
+                border: none;
+                background-color: transparent;
+                background-image: url(../assets/icons/hamburger.png);
+                @include background-props();
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 .content {
     padding: 20px 25px;
-    gap: 26px;
+    gap: 22px;
+
+    @media (max-width: $breakpoint-tablet) {
+        display: block;
+        padding: 16px 14px;
+    }
 
     .profile-section {
         background-color: $white;
@@ -158,6 +204,21 @@ header {
         border-radius: $rounded-xl;
         flex-shrink: 0;
         overflow: hidden;
+
+        @media (max-width: $breakpoint-tablet) {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            height: 100vh;
+            z-index: 97;
+            display: flex;
+            flex-direction: column;
+            transition: right 0.3s ease;
+            
+            &.visible {
+                right: 0;
+            }
+        }
 
         .bg-gray-50 {
             background-color: $snow-drift;
@@ -173,7 +234,7 @@ header {
                     width: 80px;
                     height: 80px;
                     border: 2px solid $white;
-                    box-shadow: 0 0 10px rgba(3, 3, 3, 0.06);
+                    box-shadow: 0 4px 16px rgba(3,3,3,0.3);
                     overflow: hidden;
 
                     .picture {
@@ -210,8 +271,6 @@ header {
                 }
             }
 
-            
-            
             h3 {
                 @include text-styles($text-sm, 500, $dark-gray);
                 margin-bottom: 6px;
@@ -287,6 +346,52 @@ header {
                 }
             }
         }
+
+        .menus-footer{
+            display: none;
+
+            @media (max-width: $breakpoint-tablet) {
+                display: block;
+                margin-top: auto;
+                
+                nav{
+                    padding: 16px 4px;
+                    background-color: $gray-100;
+                    ul{
+                        list-style: none;
+                        li{
+                            a {
+                                display: inline-block;
+                                padding: 10px 14px;
+                                text-decoration: none;
+                                @include text-styles($text-xs, 500, $dark-gray);
+                    
+                                .icons {
+                                    @include background-props();
+                                    width: 14px;
+                                    height: 14px;
+                                    display: inline-block;
+                                    margin-right: 6px;
+                                    vertical-align: middle;
+                                }
+                    
+                                .action {
+                                    background-image: url(../assets/icons/target.png);
+                                }
+                    
+                                .faq {
+                                    background-image: url(../assets/icons/help.png);
+                                }
+                    
+                                .logout {
+                                    background-image: url(../assets/icons/logout.png);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 
     .timeline-section {
@@ -294,6 +399,10 @@ header {
         width: 100%;
         box-shadow: 0 0px 10px rgba(3, 3, 3, 0.06);
         border-radius: $rounded-xl;
+
+        @media(max-width: $breakpoint-tablet){
+            margin-bottom: 20px;
+        }
 
         .timeline-header {
             display: flex;
@@ -306,25 +415,30 @@ header {
                 @include text-styles($text-sm, 500, $dark-gray);
             }
 
-            .icon {
-                @include background-props();
-                width: 12px;
-                height: 12px;
-                vertical-align: middle;
-                display: inline-block;
-                margin-bottom: 2px;
-            }
-
-            .calendar {
-                background-image: url(../assets/icons/calendar-2.png);
-            }
-
-            .location {
-                background-image: url(../assets/icons/location.png);
-            }
-
-            .info-item {
-                @include text-styles($text-xs, 500, $jet-grey);
+            .date-location{
+                @media(max-width: $breakpoint-tablet){
+                    display: none;
+                }
+                .icon {
+                    @include background-props();
+                    width: 12px;
+                    height: 12px;
+                    vertical-align: middle;
+                    display: inline-block;
+                    margin-bottom: 2px;
+                }
+    
+                .calendar {
+                    background-image: url(../assets/icons/calendar-2.png);
+                }
+    
+                .location {
+                    background-image: url(../assets/icons/location.png);
+                }
+    
+                .info-item {
+                    @include text-styles($text-xs, 500, $jet-grey);
+                }
             }
 
             button{
@@ -349,8 +463,13 @@ header {
 
         .event-cards {
             display: flex;
-            gap: 20px;
-            padding: 20px;
+            gap: 18px;
+            padding: 18px;
+
+            @media (max-width: $breakpoint-tablet) {
+                display: block;
+                padding: 10px;
+            }
 
             .card {
                 background-color: $mint-cream;
@@ -358,6 +477,10 @@ header {
                 width: 100%;
                 overflow: hidden;
                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+                @media (max-width: $breakpoint-tablet) {
+                    margin-bottom: 20px;
+                }
 
                 &.border-violet{
                     border: 1px solid $light-violet;
@@ -631,6 +754,10 @@ header {
         border-radius: $rounded-xl;
         flex-shrink: 0;
         overflow: hidden;
+
+        @media(max-width: $breakpoint-tablet){
+            margin: 0 auto;
+        }
 
         .sponsor-head{
             justify-content: space-between;

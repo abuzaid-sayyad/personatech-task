@@ -43,9 +43,12 @@
                 </ul>
             </nav>
         </div>
+        <div class="hamburger">
+            <button id="btn"></button>
+        </div>
     </header>
     <div class="content flex">
-        <aside class="profile-section">
+        <aside id="profile-sidebar" class="profile-section">
             <div class="bg-gray-50">
                 <div class="profile-pic flex relative">
                     <div class="rounded">
@@ -110,16 +113,40 @@
                     </li>
                 </ul>
             </nav>
+            <div class="menus-footer">
+                <nav>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <span class="icons action"></span>
+                                <span>My Actions(6)</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icons faq"></span>
+                                <span>FAQs</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <span class="icons logout"></span>
+                                <span>Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </aside>
         <main class="timeline-section">
             <div class="timeline-header">
                 <div class="flex">
                     <h3>Bett UAE 2023 AT</h3>
-                    <div class="mx-4">
+                    <div class="date-location mx-4">
                         <span class="icon calendar"></span>
                         <span class="info-item">Mar 29 - 31, 2023</span>
                     </div>
-                    <div>
+                    <div class="date-location">
                         <span class="icon location"></span>
                         <span class="info-item">Excel London</span>
                     </div>
@@ -281,23 +308,27 @@
             </div>
         </main>
         <aside>
-            <div class="sponsors">
-                <div class="sponsor-head flex">
-                    <h2>Sponsors</h2>
-                    <button>✕</button>
-                </div>
-                <div class="sponsor border-b">
-                    <img class="citi-logo" src="assets/logo/citi-logo.png" alt="Citi">
-                    <p>Partnering for Innovation and Growth. Together. Today. Tomorrow</p>
-                    <a href="https://citi.com">https://citi.com</a>
-                </div>
-                <div class="sponsor">
-                    <img class="pt-logo" src="assets/logo/peronatech.jpeg" alt="PT">
-                    <p>Partnering for Innovation and Growth. Together. Today. Tomorrow</p>
-                    <a href="https://personatech.com">https://personatech.com</a>
+            <div class="flex">
+                <div class="sponsors">
+                    <div class="sponsor-head flex">
+                        <h2>Sponsors</h2>
+                        <button>✕</button>
+                    </div>
+                    <div class="sponsor border-b">
+                        <img class="citi-logo" src="assets/logo/citi-logo.png" alt="Citi">
+                        <p>Partnering for Innovation and Growth. Together. Today. Tomorrow</p>
+                        <a href="https://citi.com">https://citi.com</a>
+                    </div>
+                    <div class="sponsor">
+                        <img class="pt-logo" src="assets/logo/peronatech.jpeg" alt="PT">
+                        <p>Partnering for Innovation and Growth. Together. Today. Tomorrow</p>
+                        <a href="https://personatech.com">https://personatech.com</a>
+                    </div>
                 </div>
             </div>
         </aside>
     </div>
+
+    <script src="main.js"></script>
 </body>
 </html>
